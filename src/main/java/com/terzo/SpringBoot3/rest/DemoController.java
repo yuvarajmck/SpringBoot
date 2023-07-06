@@ -2,6 +2,7 @@ package com.terzo.SpringBoot3.rest;
 
 import com.terzo.SpringBoot3.common.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,8 +11,8 @@ public class DemoController {
     private Coach coach;
 
     @Autowired
-    public DemoController(Coach coach) {
-        this.coach = coach;
+    public void dof(@Qualifier("swimCoach") Coach c){
+        coach=c;
     }
 
     @GetMapping("/dailyWorkout")
