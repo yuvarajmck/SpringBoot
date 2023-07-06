@@ -11,7 +11,7 @@ public class DemoController {
     private Coach coach;
 
     @Autowired
-    public void dof(@Qualifier("swimCoach") Coach c){
+    public void dof(@Qualifier("aquatic") Coach c){
         coach=c;
     }
 
